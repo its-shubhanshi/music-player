@@ -1,0 +1,112 @@
+*,::before,::after{margin: 0; box-sizing: border-box;}
+a{text-decoration: none;}
+label{display: inline-block;}
+img{vertical-align: bottom; max-width: 100%; height: auto;}
+iframe{border: none;}
+button{cursor: pointer;}
+abbr[title]{cursor: help;}
+body{font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 10px ;display: grid; place-items: center;
+}
+
+@font-face {
+    font-family: bb;
+    src: url(/fonts/BebasNeue-Bold.woff2);
+}
+h1,h2,h3{font-family: bb,sans-serif;}
+.row{ 
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -10px;
+}
+
+.row [class^="col"]{ flex: 1 0 auto; padding: 0 10px; }
+.row .col-1{ flex-basis: 8.33%; }
+.row .col-2{ flex-basis: 16.66%; }
+.row .col-3{ flex-basis: 25%; }
+.row .col-4{ flex-basis: 33.33%; max-width: 33.33%; }
+.row .col-5{ flex-basis: 41.66%; }
+.row .col-6{ flex-basis: 50%;max-width: 50%;}
+.row .col-7{ flex-basis: 58.33%; }
+.row .col-8{ flex-basis: 66.66%; }
+.row .col-9{ flex-basis: 75%; }
+.row .col-10{ flex-basis: 83.33%; }
+.row .col-11{ flex-basis: 91.11%; }
+.row .col-12{ flex-basis: 100%; max-width: 100%;}
+
+.music_box{
+    background-color: #47f6b3; 
+            border-radius: 2rem;
+            box-shadow: 0 1.2rem 3rem 0.5rem rgba(0,0,0,0.2); margin: 5% 0;
+            padding: 2rem 4rem; text-align: center;
+}
+audio{display: none;}
+
+.music_box #title{
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    color: #171717;
+    margin: 1rem 0.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+    text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.3);
+}
+.music_box #artist{
+    margin:20px 0; font-size: 2rem; color: #777;
+}
+.img_container{border-radius: 50%;}
+.img_container img{ border-radius: 50%; border: 5px solid #000;       
+    box-shadow: 0 1.2rem 3rem 0.5rem rgba(0,0,0,0.4);
+}
+.controls{align-items: center; margin-top: 30px;}
+.controls .fa{
+        color: #111111;
+        font-size: 2rem;
+        cursor: pointer;
+        filter: drop-shadow(0 1.2rem 3rem 0.5rem rgba(0,0,0,0.4));
+}
+.controls span{margin: 0 20px;text-align: center;}
+.controls #play{width:5rem; height: 5rem; background: #111111;
+     color: #fff; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center;}
+
+.controls #play:hover{background: #fbfbfb; color: #111111; border: 2px solid #111111;}
+
+/* anime add class */
+.anime{
+    animation: rotatePlayer 5s linear infinite;
+}
+
+@keyframes rotatePlayer{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+@media screen and (max-width:1270px) {
+}
+
+@media screen and (max-width:980px) {
+    .row .col-t-12{flex-basis: 100%; max-width: 100%;}
+}
+@media screen and (max-width:767px) {
+    .row .col-m-12{flex-basis: 100%; max-width: 100%;}
+}
+@media screen and (max-width:460px) {
+    .row .col-p-12{flex-basis: 100%; max-width: 100%;}
+
+    .music_box{padding: 2rem 20px;}
+    .music_box #title {
+        letter-spacing: 0.1rem;
+        word-spacing: 0rem;
+        font-size: 2rem;
+    }
+    #artist{font-size: 1rem;}
+    .img_container{width: 300px; height: 300px;}
+.img_container img{width: 300px; height: 300px;
+
+    
+}
+}
